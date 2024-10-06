@@ -18,7 +18,6 @@ public static class CourseErrorHandler
                 CourseAlreadyExistsException => StatusCodes.Status409Conflict,
                 CourseUnknownException => StatusCodes.Status500InternalServerError,
                 _ => throw new NotImplementedException("Faculty error handler does not implemented")
-
             }
         };
     }
