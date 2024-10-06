@@ -12,4 +12,5 @@ public interface ICourseUserRepository
     Task<CourseUser> AddUserToCourse(
         CourseUser courseUser,
         CancellationToken cancellationToken);
+    Task<IReadOnlyList<User>> GetUsersByCourseId(CourseId courseId, CancellationToken cancellationToken);
 }

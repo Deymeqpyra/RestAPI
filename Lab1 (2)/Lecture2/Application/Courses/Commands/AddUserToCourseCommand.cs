@@ -1,8 +1,6 @@
 using Application.Common;
-using Application.Common.Interfaces.Queries;
 using Application.Common.Interfaces.Repositories;
 using Application.Courses.Exceptions;
-using Application.Users.Exceptions;
 using Domain.Courses;
 using Domain.CourseUsers;
 using Domain.Users;
@@ -17,7 +15,8 @@ public class AddUserToCourseCommand : IRequest<Result<CourseUser, CourseUserExce
 }
 
 public class AddUserToCourseCommandHandler(
-    ICourseUserRepository courseUserRepository
+    ICourseUserRepository courseUserRepository,
+    ICourseRepository courseRepository
 )
     : IRequestHandler<AddUserToCourseCommand, Result<CourseUser, CourseUserException>>
 {
@@ -25,12 +24,29 @@ public class AddUserToCourseCommandHandler(
         AddUserToCourseCommand request,
         CancellationToken cancellationToken)
     {
-        var courseID = new CourseId(request.CourseId);
+        var courseId = new CourseId(request.CourseId);
         var userId = new UserId(request.UserId);
-        var courseUserEntity =  await courseUserRepository.GetCourseByIds(courseID, userId, cancellationToken);
-        return await courseUserEntity.Match<Task<Result<CourseUser, CourseUserException>>>(
-            async cu => await Task.FromResult<Result<CourseUser, CourseUserException>>(new CourseUserAlreadyExistsException(cu.CourseId, cu.UserId)),
-            async () => await UpdateEntity(userId, courseID, cancellationToken));
+        var courseUserEntity =  await courseUserRepository.GetCourseByIds(courseId, userId, cancellationToken);
+        var userList = await courseUserRepository.GetUsersByCourseId(courseId, cancellationToken);
+        return await courseUserEntity.Match<Task<Result<CourseUser, CourseUserException>>>
+        (
+            async cu=> await Task.FromResult<Result<CourseUser, CourseUserException>>(new CourseUserAlreadyExistsException(cu.CourseId, cu.UserId)),
+            async () =>
+            {
+                var courseEntity = await courseRepository.GetById(courseId, cancellationToken);
+                return await courseEntity.Match<Task<Result<CourseUser, CourseUserException>>>(
+                    async c =>
+                    {
+                        if (userList.Count >= c.MaxStudentsInCourse)
+                        {
+                            return new CourseAlreadyFullException(courseId);
+                        }
+                        return await UpdateEntity(userId, courseId, cancellationToken);
+                    },
+                    async () => await Task.FromResult<CourseUserException>(new CourseUserNotFoundException(courseId))
+                );
+            }
+        );
     }
     private async Task<Result<CourseUser, CourseUserException>> UpdateEntity(
         UserId userId,

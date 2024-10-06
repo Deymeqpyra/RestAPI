@@ -12,7 +12,7 @@ public class Course
     public int MaxStudents { get; private set; }
 
     public ICollection<CourseUser> CourseUsers { get; set; }
-    // List<User> = 
+    
     public int MaxStudentsInCourse => MaxStudents;
     private Course(
         CourseId id, 

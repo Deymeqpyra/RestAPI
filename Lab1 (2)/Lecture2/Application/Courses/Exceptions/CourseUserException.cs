@@ -21,3 +21,5 @@ public class CourseUserAlreadyExistsException(CourseId courseId, UserId userId)
     : CourseUserException(courseId, userId, $"User {userId} in Course {courseId} already exists");
 public class CourseAlreadyFullException(CourseId courseId)
     : CourseUserException(courseId, null, $"Course {courseId} already full");
+public class CourseUserNotFoundException(CourseId courseId)
+    : CourseUserException(courseId, null, $"Course {courseId} not found");

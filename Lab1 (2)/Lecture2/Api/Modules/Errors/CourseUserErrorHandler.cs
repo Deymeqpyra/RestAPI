@@ -18,6 +18,7 @@ public static class CourseUserErrorHandler
                 UsersInCourseNotFound => StatusCodes.Status404NotFound,
                 CourseUserUnkownException => StatusCodes.Status400BadRequest,
                 CourseUserAlreadyExistsException => StatusCodes.Status409Conflict,
+                CourseAlreadyFullException => StatusCodes.Status400BadRequest,
                 _ => StatusCodes.Status500InternalServerError
             }
         };
