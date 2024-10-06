@@ -16,7 +16,7 @@ public class SetRatingCourseCommand : IRequest<Result<CourseUser, CourseUserExce
 }
 
 public class SetRatingCourseCommandHandler(
-    ICourseRepository courseRepository
+    ICourseUserRepository courseUserRepository
 )
     : IRequestHandler<SetRatingCourseCommand, Result<CourseUser, CourseUserException>>
 {
@@ -26,7 +26,7 @@ public class SetRatingCourseCommandHandler(
     {
         var courseId = new CourseId(request.CourseId);
         var userId = new UserId(request.UserId);
-        var entity = await courseRepository.GetCourseByIds(courseId, userId, cancellationToken);
+        var entity = await courseUserRepository.GetCourseByIds(courseId, userId, cancellationToken);
 
         return await entity.Match(
             async cu => await UpdateRating(cu, request.Rating, cancellationToken),
@@ -43,7 +43,7 @@ public class SetRatingCourseCommandHandler(
         {
             courseUser.SetRatingAndFinish(rating);
         
-            return await courseRepository.UpdateCourseUser(courseUser, cancellationToken);
+            return await courseUserRepository.UpdateCourseUser(courseUser, cancellationToken);
         }
         catch (Exception ex)
         {

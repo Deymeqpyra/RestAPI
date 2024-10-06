@@ -10,7 +10,7 @@ namespace Api.Controllers;
 
 [Route("courses")]
 [ApiController]
-public class CoursesController(ISender sender, ICourseQueries courseQueries) : ControllerBase
+public class CoursesController(ISender sender, ICourseQueries courseQueries, ICourseUserQueries courseUserQueries) : ControllerBase
 {
     [HttpGet]
     public async Task<ActionResult<IReadOnlyList<CourseDto>>> GetAll(CancellationToken cancellationToken)
@@ -38,7 +38,7 @@ public class CoursesController(ISender sender, ICourseQueries courseQueries) : C
     [HttpGet("{userId:guid}/GetCourseByUser")]
     public async Task<ActionResult<IReadOnlyList<CourseUserDto>>> GetCourseByUser([FromRoute] Guid userId, CancellationToken cancellationToken)
     {
-        var entities = await courseQueries.GetCourseByUser(new UserId(userId), cancellationToken);
+        var entities = await courseUserQueries.GetCourseByUser(new UserId(userId), cancellationToken);
         
         return  entities.Select(CourseUserDto.FromCourseUser).ToList();
     }
@@ -93,7 +93,7 @@ public class CoursesController(ISender sender, ICourseQueries courseQueries) : C
             EndDate = request.EndDate,
             MaxStudents = request.MaxStudents
         };
-        
+            
         var result = await sender.Send(input, cancellationToken);
         
         return result.Match<ActionResult<CourseDto>>(

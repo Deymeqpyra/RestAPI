@@ -947,19 +947,19 @@
     ]
   },
   "packageFolders": {
-    "/home/qpyra/.nuget/packages/": {}
+    "C:\\Users\\deyme\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Infrastructure/Infrastructure.csproj",
+      "projectUniqueName": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Infrastructure/Infrastructure.csproj",
-      "packagesPath": "/home/qpyra/.nuget/packages/",
-      "outputPath": "/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Infrastructure/obj/",
+      "projectPath": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\deyme\\.nuget\\packages\\",
+      "outputPath": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/qpyra/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\deyme\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -971,11 +971,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/Application.csproj": {
-              "projectPath": "/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/Application.csproj"
+            "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Application\\Application.csproj": {
+              "projectPath": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Application\\Application.csproj"
             },
-            "/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Domain/Domain.csproj": {
-              "projectPath": "/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Domain/Domain.csproj"
+            "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Domain\\Domain.csproj": {
+              "projectPath": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Domain\\Domain.csproj"
             }
           }
         }
@@ -984,6 +984,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1014,18 +1019,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.7, 8.0.7]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\deyme\\.dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -9,3 +9,15 @@
 /home/qpyra/Завантажене/Lab1 (2)/Lecture2/Domain/obj/Debug/net8.0/refint/Domain.dll
 /home/qpyra/Завантажене/Lab1 (2)/Lecture2/Domain/obj/Debug/net8.0/Domain.pdb
 /home/qpyra/Завантажене/Lab1 (2)/Lecture2/Domain/obj/Debug/net8.0/ref/Domain.dll
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\bin\Debug\net8.0\Domain.deps.json
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\bin\Debug\net8.0\Domain.dll
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\bin\Debug\net8.0\Domain.pdb
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\Domain.dll
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\refint\Domain.dll
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\Domain.pdb
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Domain\obj\Debug\net8.0\ref\Domain.dll

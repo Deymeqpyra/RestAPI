@@ -17,9 +17,7 @@ public class AddUserToCourseCommand : IRequest<Result<CourseUser, CourseUserExce
 }
 
 public class AddUserToCourseCommandHandler(
-    ICourseRepository courseRepository,
-    ICourseQueries courseQueries,
-    IUserRepository userRepository
+    ICourseUserRepository courseUserRepository
 )
     : IRequestHandler<AddUserToCourseCommand, Result<CourseUser, CourseUserException>>
 {
@@ -29,12 +27,11 @@ public class AddUserToCourseCommandHandler(
     {
         var courseID = new CourseId(request.CourseId);
         var userId = new UserId(request.UserId);
-        var courseUserEntity =  await courseRepository.GetCourseByIds(courseID, userId, cancellationToken);
+        var courseUserEntity =  await courseUserRepository.GetCourseByIds(courseID, userId, cancellationToken);
         return await courseUserEntity.Match<Task<Result<CourseUser, CourseUserException>>>(
             async cu => await Task.FromResult<Result<CourseUser, CourseUserException>>(new CourseUserAlreadyExistsException(cu.CourseId, cu.UserId)),
             async () => await UpdateEntity(userId, courseID, cancellationToken));
     }
-    // CourseUserRepository
     private async Task<Result<CourseUser, CourseUserException>> UpdateEntity(
         UserId userId,
         CourseId courseId,
@@ -43,7 +40,7 @@ public class AddUserToCourseCommandHandler(
         try
         {
             var entity = CourseUser.New(courseId, userId, 1);
-            return await courseRepository.AddUserToCourse(entity, cancellationToken);
+            return await courseUserRepository.AddUserToCourse(entity, cancellationToken);
         }
         catch (Exception e)
         {
