@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FgEfaJxsIyU=",
+  "success": true,
+  "projectFilePath": "/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Domain/Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/qpyra/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.7/microsoft.aspnetcore.app.ref.8.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}

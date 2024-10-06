@@ -1,0 +1,15 @@
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/bin/Debug/net8.0/Application.deps.json
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/bin/Debug/net8.0/Application.dll
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/bin/Debug/net8.0/Application.pdb
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/bin/Debug/net8.0/Domain.dll
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/bin/Debug/net8.0/Domain.pdb
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/Application.csproj.AssemblyReference.cache
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/Application.AssemblyInfoInputs.cache
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/Application.AssemblyInfo.cs
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/Application.csproj.CoreCompileInputs.cache
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/Application.csproj.CopyComplete
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/Application.dll
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/refint/Application.dll
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/Application.pdb
+/home/qpyra/Завантажене/Lab1 (2)/Lecture2/Application/obj/Debug/net8.0/ref/Application.dll
