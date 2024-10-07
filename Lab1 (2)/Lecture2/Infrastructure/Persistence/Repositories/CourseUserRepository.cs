@@ -42,6 +42,19 @@ public class CourseUserRepository(ApplicationDbContext context) : ICourseUserRep
             .ToListAsync(cancellationToken);
         
     }
+    public async Task<IReadOnlyList<CourseUser>> GetAll(CancellationToken cancellationToken)
+    {
+        return await context.CourseUsers
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
+    }
+    public async Task<List<CourseUser>> GetAllCourseUsersByCourseId(CourseId courseId, CancellationToken cancellationToken)
+    {
+        return await context.CourseUsers
+            .AsNoTracking()
+            .Where(x=>x.CourseId == courseId)
+            .ToListAsync(cancellationToken);
+    }
     public async Task<IReadOnlyList<User>> GetUsersByCourseId(CourseId courseId, CancellationToken cancellationToken)
     {
         var entity = await context.CourseUsers

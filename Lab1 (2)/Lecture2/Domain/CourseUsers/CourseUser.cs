@@ -26,9 +26,9 @@ public class CourseUser
     }
     public static CourseUser New(CourseId courseId, UserId userId, decimal rating, bool isFinished = false)
         => new(courseId, userId, rating, isFinished);
-    public void FinishCourse(CourseUser courseUser)
+    public void FinishCourse()
     {
-        IsFinished = true;
+            IsFinished = true; 
     }
 
     public void SetRatingAndFinish(decimal rating)

@@ -15,7 +15,7 @@ public class UsersInCourseNotFound(CourseId? courseId)
     :CourseUserException(courseId, null, $"Users in Course {courseId} not found");
 public class UserWithCourseNotFoundException(CourseId courseId, UserId userId)
     :CourseUserException(courseId, userId, $"User {userId} in Course {courseId} not found");
-public class CourseUserUnkownException(CourseId courseId, UserId userId, Exception innerException)
+public class CourseUserUnkownException(CourseId courseId, UserId? userId, Exception innerException)
     :CourseUserException(courseId, userId, $"Unkown exception for User {userId} and Course {courseId}", innerException);
 public class CourseUserAlreadyExistsException(CourseId courseId, UserId userId)
     : CourseUserException(courseId, userId, $"User {userId} in Course {courseId} already exists");

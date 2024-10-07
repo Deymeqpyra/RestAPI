@@ -2,6 +2,7 @@ using Api.Dtos;
 using Api.Modules.Errors;
 using Application.Common.Interfaces.Queries;
 using Application.Courses.Commands;
+using Domain.CourseUsers;
 using Domain.Users;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -98,6 +99,22 @@ public class CoursesController(ISender sender, ICourseQueries courseQueries, ICo
         
         return result.Match<ActionResult<CourseDto>>(
             c=>CourseDto.FromDomainModel(c),
+            e=>e.ToObjectResult());
+    }
+    [HttpPut("FinishCourseForAll")]
+    public async Task<ActionResult<IReadOnlyList<CourseUserDto>>> FinishCourseForAll(
+        Guid courseId,
+        CancellationToken cancellationToken)
+    {
+        var input = new FinishCourseForUsersCommand
+        {
+            CourseId = courseId
+        };
+            
+        var result = await sender.Send(input, cancellationToken);
+        
+        return result.Match<ActionResult<IReadOnlyList<CourseUserDto>>>(
+            c=>c.Select(CourseUserDto.FromCourseUser).ToList(),
             e=>e.ToObjectResult());
     }
 }
