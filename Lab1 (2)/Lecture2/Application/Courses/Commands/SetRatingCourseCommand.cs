@@ -42,7 +42,7 @@ public class SetRatingCourseCommandHandler(
         try
         {
             courseUser.SetRatingAndFinish(rating);
-            return await courseUserRepository.UpdateCourseUser(courseUser, cancellationToken);
+            return await courseUserRepository.Update(courseUser, cancellationToken);
         }
         catch (Exception ex)
         {

@@ -1,4 +1,5 @@
 using Application.Common;
+using Application.Common.Interfaces.Queries;
 using Application.Common.Interfaces.Repositories;
 using Application.Courses.Exceptions;
 using Domain.Courses;
@@ -16,6 +17,7 @@ public class AddUserToCourseCommand : IRequest<Result<CourseUser, CourseUserExce
 
 public class AddUserToCourseCommandHandler(
     ICourseUserRepository courseUserRepository,
+    IUserRepository userRepository,
     ICourseRepository courseRepository
 )
     : IRequestHandler<AddUserToCourseCommand, Result<CourseUser, CourseUserException>>
@@ -37,13 +39,22 @@ public class AddUserToCourseCommandHandler(
                 return await courseEntity.Match<Task<Result<CourseUser, CourseUserException>>>(
                     async c =>
                     {
-                        if (userList.Count >= c.MaxStudentsInCourse)
-                        {
-                            return new CourseAlreadyFullException(courseId);
-                        }
-                        return await UpdateEntity(userId, courseId, cancellationToken);
+                        var userEntity = await userRepository.GetById(userId, cancellationToken);
+                        return await userEntity.Match<Task<Result<CourseUser, CourseUserException>>>(
+                            async u =>
+                            {
+                                if (userList.Count >= c.MaxStudentsInCourse)
+                                {
+                                    return new CourseAlreadyFullException(courseId);
+                                }
+
+                                return await UpdateEntity(userId, courseId, cancellationToken);
+                            },
+                            async () => await Task.FromResult<CourseUserException>(
+                                new CourseUserNotFoundUserException(userId)));
+
                     },
-                    async () => await Task.FromResult<CourseUserException>(new CourseUserNotFoundException(courseId))
+                    async () => await Task.FromResult<CourseUserException>(new CourseUserNotFoundCourseException(courseId))
                 );
             }
         );
@@ -56,7 +67,7 @@ public class AddUserToCourseCommandHandler(
         try
         {
             var entity = CourseUser.New(courseId, userId, 1);
-            return await courseUserRepository.AddUserToCourse(entity, cancellationToken);
+            return await courseUserRepository.Create(entity, cancellationToken);
         }
         catch (Exception e)
         {

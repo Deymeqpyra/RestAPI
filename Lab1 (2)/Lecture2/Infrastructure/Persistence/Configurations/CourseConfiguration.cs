@@ -22,8 +22,5 @@ public class CourseConfiguration : IEntityTypeConfiguration<Course>
         builder.Property(c => c.EndDate)
             .HasConversion(new DateTimeUtcConverter())
             .HasDefaultValueSql("timezone('utc', now())");
-        
-        // builder.OwnsMany(x=>x.Users, b=>{})
-        // builder.OwnsOne()
     }
 }

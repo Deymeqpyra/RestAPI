@@ -8,8 +8,8 @@ namespace Application.Common.Interfaces.Repositories;
 public interface ICourseUserRepository
 {
     Task<Option<CourseUser>> GetCourseByIds(CourseId courseId, UserId userId, CancellationToken cancellationToken);
-    Task<CourseUser> UpdateCourseUser(CourseUser courseUser, CancellationToken cancellationToken);
-    Task<CourseUser> AddUserToCourse(
+    Task<CourseUser> Update(CourseUser courseUser, CancellationToken cancellationToken);
+    Task<CourseUser> Create(
         CourseUser courseUser,
         CancellationToken cancellationToken);
     Task<IReadOnlyList<User>> GetUsersByCourseId(CourseId courseId, CancellationToken cancellationToken);

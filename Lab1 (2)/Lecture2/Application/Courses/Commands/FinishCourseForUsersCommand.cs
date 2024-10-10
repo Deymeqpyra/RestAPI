@@ -27,7 +27,7 @@ public class FinishCourseForUsersCommandHandler(
         
         return await courseEntity.Match<Task<Result<IReadOnlyList<CourseUser>, CourseUserException>>>(
             async cu => await UpdateEntity(cu, cancellationToken),
-            async () => await Task.FromResult<CourseUserException>(new CourseUserNotFoundException(courseId))) ;
+            async () => await Task.FromResult<CourseUserException>(new CourseUserNotFoundCourseException(courseId))) ;
     }
 
     public async Task<Result<IReadOnlyList<CourseUser>, CourseUserException>> UpdateEntity
@@ -39,7 +39,7 @@ public class FinishCourseForUsersCommandHandler(
             foreach (var courseItem in courseList)
             {
                 courseItem.FinishCourse();
-                await courseUserRepository.UpdateCourseUser(courseItem, cancellationToken);
+                await courseUserRepository.Update(courseItem, cancellationToken);
             }
             return courseList;
         }

@@ -10,7 +10,7 @@ namespace Infrastructure.Persistence.Repositories;
 
 public class CourseUserRepository(ApplicationDbContext context) : ICourseUserRepository, ICourseUserQueries
 {
-    public async Task<CourseUser> AddUserToCourse(
+    public async Task<CourseUser> Create(
         CourseUser courseUser,
         CancellationToken cancellationToken)
     {
@@ -18,7 +18,7 @@ public class CourseUserRepository(ApplicationDbContext context) : ICourseUserRep
         await context.SaveChangesAsync(cancellationToken);
         return courseUser;
     }
-    public async Task<CourseUser> UpdateCourseUser(CourseUser courseUser, CancellationToken cancellationToken)
+    public async Task<CourseUser> Update(CourseUser courseUser, CancellationToken cancellationToken)
     {
         context.CourseUsers.Update(courseUser);
         

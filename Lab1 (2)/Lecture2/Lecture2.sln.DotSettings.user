@@ -4,16 +4,9 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AExceptionDispatchInfo_002Ecs_002Fl_003AC_0021_003FUsers_003Fdeyme_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003Fbd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182_003FExceptionDispatchInfo_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AFluentValidationMvcExtensions_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003Fecc6246fd855ee6a4602ae9988369e56f35ce0107895f34cfd2b9274e27ac1_003FFluentValidationMvcExtensions_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AXUnit2TestFramework_002Ecs_002Fl_003AC_0021_003FUsers_003Fdeyme_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003Fc62dbcc4ba2718769223d2edcbb462defa1d97c8f2ef066639d41ddd521e_003FXUnit2TestFramework_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d880b39b_002D69e0_002D4b69_002Db0f5_002D3821d5306cfa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldCreateFaculty" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a74bc79_002Db1bd_002D430b_002D919e_002D6a89593eca15/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldNotCreateCourseUserBecauseUserNotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Faculties.FacultiesControllerTests.ShouldCreateFaculty&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Faculties.FacultiesControllerTests.ShouldUpdateFaculty&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Faculties.FacultiesControllerTests.ShouldNotUpdateFacultyBecauseFacultyNotFound&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Faculties.FacultiesControllerTests.ShouldNotCreateFacultyBecauseNameDuplicated&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldCreateUser&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldUpdateUser&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldNotCreateUserBecauseDuplicateName&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldNotUpdateUserBecauseUserNotFound&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldNotCreateUserBecauseNullName&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Courses.CoursesControllerTests.ShouldNotCreateCourseUserBecauseUserNotFound&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>

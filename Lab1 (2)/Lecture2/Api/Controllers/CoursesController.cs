@@ -64,14 +64,14 @@ public class CoursesController(ISender sender, ICourseQueries courseQueries, ICo
     }
     [HttpPost("AddUserToCourse")]
     public async Task<ActionResult<CourseUserDto>> AddUserToCourse(
-        Guid userId,
-        Guid courseId,
+        [FromBody]
+        CourseUserDto request,
         CancellationToken cancellationToken)
     {
         var input = new AddUserToCourseCommand
         {
-            CourseId = courseId,
-            UserId = userId
+            CourseId = request.CourseId,
+            UserId = request.UserId 
         };
         
         var result = await sender.Send(input, cancellationToken);
@@ -83,7 +83,8 @@ public class CoursesController(ISender sender, ICourseQueries courseQueries, ICo
 
     [HttpPut]
     public async Task<ActionResult<CourseDto>> Update(
-        [FromBody] CourseDto request,
+        [FromBody] 
+        CourseDto request,
         CancellationToken cancellationToken)
     {
         var input = new UpdateCourseCommand

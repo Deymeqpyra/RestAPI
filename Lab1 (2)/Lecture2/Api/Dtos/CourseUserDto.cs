@@ -5,11 +5,11 @@ namespace Api.Dtos;
 public record CourseUserDto(
     Guid? CourseUserId,
     Guid CourseId,
-    CourseDto Course,
+    CourseDto? Course,
     Guid UserId,
-    UserDto User,
-    decimal Rating,
-    bool IsFinished
+    UserDto? User,
+    decimal? Rating,
+    bool? IsFinished
     )
 {
     public static CourseUserDto FromCourseUser(CourseUser courseUser)
