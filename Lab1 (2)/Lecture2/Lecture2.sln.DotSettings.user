@@ -10,5 +10,10 @@
     &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Faculties.FacultiesControllerTests.ShouldUpdateFaculty&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Faculties.FacultiesControllerTests.ShouldNotUpdateFacultyBecauseFacultyNotFound&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Faculties.FacultiesControllerTests.ShouldNotCreateFacultyBecauseNameDuplicated&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldCreateUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldUpdateUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldNotCreateUserBecauseDuplicateName&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldNotUpdateUserBecauseUserNotFound&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Users.UsersControllerTests.ShouldNotCreateUserBecauseNullName&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
