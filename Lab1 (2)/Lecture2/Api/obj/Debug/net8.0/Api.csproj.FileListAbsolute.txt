@@ -235,3 +235,4 @@ E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Api\obj\Debug\net8.0\refint\Api
 E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Api\obj\Debug\net8.0\Api.pdb
 E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Api\obj\Debug\net8.0\ref\Api.dll
+E:\Developing\Projects\RestAPI\Lab1 (2)\Lecture2\Api\bin\Debug\net8.0\appsettings.Test.json

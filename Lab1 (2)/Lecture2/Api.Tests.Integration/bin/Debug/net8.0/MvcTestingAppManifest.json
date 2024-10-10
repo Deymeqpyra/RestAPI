@@ -1,0 +1,8 @@
+{
+  "Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Api",
+  "Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Application",
+  "Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Domain",
+  "Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Infrastructure",
+  "Tests.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Tests.Common",
+  "Tests.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Developing\\Projects\\RestAPI\\Lab1 (2)\\Lecture2\\Tests.Data"
+}
