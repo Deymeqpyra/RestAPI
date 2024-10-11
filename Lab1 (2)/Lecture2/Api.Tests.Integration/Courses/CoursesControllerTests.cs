@@ -151,14 +151,11 @@ public class CoursesControllerTests
     public async Task ShouldCreateCourseUser()
     {
         // arrange 
-        var request = new CourseUserDto(
+        var request = new CourseUserIdDto(
             CourseUserId: null,
             CourseId: _extraCourse.Id.Value,
-            Course: null,
-            UserId: _extraUser.Id.Value,
-            User: null,
-            Rating: null,
-            IsFinished: null);
+            UserId: _extraUser.Id.Value
+           );
         
         // act 
         var response = await Client.PostAsJsonAsync("courses/AddUserToCourse", request);
@@ -171,14 +168,11 @@ public class CoursesControllerTests
     public async Task ShouldNotCreateCourseUserBecauseCourseNotFound()
     {
         // arrange 
-        var request = new CourseUserDto(
+        var request = new CourseUserIdDto(
             CourseUserId: null,
             CourseId: Guid.NewGuid(), 
-            Course: null,
-            UserId: _extraUser.Id.Value, 
-            User: null,
-            Rating: null,
-            IsFinished: null);
+            UserId: _extraUser.Id.Value
+            );
         
         // act
         var response = await Client.PostAsJsonAsync("courses/AddUserToCourse", request);
@@ -192,14 +186,11 @@ public class CoursesControllerTests
     public async Task ShouldNotCreateCourseUserBecauseUserNotFound()
     {
         // arrange 
-        var request = new CourseUserDto(
+        var request = new CourseUserIdDto(
             CourseUserId: null,
             CourseId: _extraCourse.Id.Value,
-            Course: null,
-            UserId: Guid.NewGuid(), 
-            User: null,
-            Rating: null,
-            IsFinished: null);
+            UserId: Guid.NewGuid()
+            );
         
         // act
         var response = await Client.PostAsJsonAsync("courses/AddUserToCourse", request);

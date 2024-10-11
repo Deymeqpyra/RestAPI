@@ -2,6 +2,7 @@ using Api.Dtos;
 using Api.Modules.Errors;
 using Application.Common.Interfaces.Queries;
 using Application.Courses.Commands;
+using Domain.Courses;
 using Domain.CourseUsers;
 using Domain.Users;
 using MediatR;
@@ -19,6 +20,13 @@ public class CoursesController(ISender sender, ICourseQueries courseQueries, ICo
         var entities = await courseQueries.GetAll(cancellationToken);
         
         return entities.Select(CourseDto.FromDomainModel).ToList();
+    }
+    [HttpGet("GetAllCourseUser")]
+    public async Task<ActionResult<IReadOnlyList<CourseUserDto>>> GetAllCourseUser(CancellationToken cancellationToken)
+    {
+        var entities = await courseUserQueries.GetAll(cancellationToken);
+        
+        return entities.Select(CourseUserDto.FromCourseUser).ToList();
     }
     [HttpPut("SetRating")]
     public async Task<ActionResult<CourseUserDto>> SetRating(Guid courseId, Guid userId, decimal rating, CancellationToken cancellationToken)
@@ -43,6 +51,13 @@ public class CoursesController(ISender sender, ICourseQueries courseQueries, ICo
         
         return  entities.Select(CourseUserDto.FromCourseUser).ToList();
     }
+    [HttpGet("{courseId:guid}/GetCourseUserByCourse")]
+    public async Task<ActionResult<IReadOnlyList<UserDto>>> GetCourseUserByCourse([FromRoute] Guid courseId, CancellationToken cancellationToken)
+    {
+        var entities = await courseUserQueries.GetUsersByCourseId(new CourseId(courseId), cancellationToken);
+        
+        return  entities.Select(UserDto.FromDomainModel).ToList();
+    }
     [HttpPost("CreateCourse")]
     public async Task<ActionResult<CourseDto>> Create(
         [FromBody] CourseDto request,
@@ -65,7 +80,7 @@ public class CoursesController(ISender sender, ICourseQueries courseQueries, ICo
     [HttpPost("AddUserToCourse")]
     public async Task<ActionResult<CourseUserDto>> AddUserToCourse(
         [FromBody]
-        CourseUserDto request,
+        CourseUserIdDto request,
         CancellationToken cancellationToken)
     {
         var input = new AddUserToCourseCommand

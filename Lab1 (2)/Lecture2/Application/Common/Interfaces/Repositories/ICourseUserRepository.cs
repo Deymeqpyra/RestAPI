@@ -16,4 +16,7 @@ public interface ICourseUserRepository
     Task<List<CourseUser>> GetAllCourseUsersByCourseId
         (CourseId courseId, CancellationToken cancellationToken);
     Task<IReadOnlyList<CourseUser>> GetAll(CancellationToken cancellationToken);
+
+    Task<IReadOnlyList<CourseUser>> UpdateRange(IReadOnlyList<CourseUser> courseUser,
+        CancellationToken cancellationToken);
 }

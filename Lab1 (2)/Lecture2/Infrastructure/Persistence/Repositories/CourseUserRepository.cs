@@ -26,6 +26,14 @@ public class CourseUserRepository(ApplicationDbContext context) : ICourseUserRep
         
         return courseUser;
     }
+    public async Task<IReadOnlyList<CourseUser>> UpdateRange(IReadOnlyList<CourseUser> courseUser, CancellationToken cancellationToken)
+    {
+        context.CourseUsers.UpdateRange(courseUser);
+        
+        await context.SaveChangesAsync(cancellationToken);
+        
+        return courseUser;
+    }
     public async Task<Option<CourseUser>> GetCourseByIds(CourseId courseId, UserId userId, CancellationToken cancellationToken)
     {
         var entity = await context.CourseUsers

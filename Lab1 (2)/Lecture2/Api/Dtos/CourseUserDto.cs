@@ -23,3 +23,20 @@ public record CourseUserDto(
             IsFinished: courseUser.IsFinished
         );
 }
+public record CourseUserIdDto(
+    Guid? CourseUserId,
+    Guid CourseId,
+    Guid UserId
+)
+{
+    public static CourseUserDto FromCourseUser(CourseUser courseUser)
+        => new(
+            CourseUserId: courseUser.CourseUserId,
+            CourseId: courseUser.CourseId.Value,
+            Course: null,
+            UserId: courseUser.UserId.Value,
+            User: null,
+            Rating: null,
+            IsFinished:null
+        );
+}

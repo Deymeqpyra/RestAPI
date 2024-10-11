@@ -7,6 +7,7 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a74bc79_002Db1bd_002D430b_002D919e_002D6a89593eca15/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldNotCreateCourseUserBecauseUserNotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Courses.CoursesControllerTests.ShouldNotCreateCourseUserBecauseUserNotFound&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5014FC28-83F8-4228-A490-F43ABE73C674::net8.0::Api.Tests.Integration.Courses.CoursesControllerTests.ShouldCreateCourseUser&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	</wpf:ResourceDictionary>

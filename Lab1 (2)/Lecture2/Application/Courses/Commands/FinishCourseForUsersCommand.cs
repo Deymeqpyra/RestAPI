@@ -39,8 +39,8 @@ public class FinishCourseForUsersCommandHandler(
             foreach (var courseItem in courseList)
             {
                 courseItem.FinishCourse();
-                await courseUserRepository.Update(courseItem, cancellationToken);
             }
+            await courseUserRepository.UpdateRange(courseList, cancellationToken);
             return courseList;
         }
         catch (Exception e)
